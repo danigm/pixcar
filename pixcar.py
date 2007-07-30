@@ -45,22 +45,19 @@ def main():
     pygame.init()
     screen = pygame.display.set_mode((800,600), pygame.DOUBLEBUF)
     pygame.display.set_caption('PiXCar')
-    pygame.mouse.set_visible(0)
-
-    fullname = os.path.join('data', 'icon.png')
-    image = pygame.image.load(fullname)
-
+    image, rect = utils.load_image("car.png",(255,255,255))
     pygame.display.set_icon(image)
+    pygame.mouse.set_visible(0)
     
 #el menu
     menu = Menu()
-#    try:
-#        pygame.mixer.init()
-#        pygame.mixer.music.load('data/music.mp3')
-#        pygame.mixer.music.play(-1, 2)
-#        music=1
-#    except:
-#        music=0
+#   try:
+#       pygame.mixer.init()
+#       pygame.mixer.music.load('data/music.mp3')
+#       pygame.mixer.music.play(-1, 2)
+#       music=1
+#   except:
+#       music=0
     
     clock = pygame.time.Clock()
     modo = 0
@@ -120,7 +117,8 @@ def mainMenu(menu, screen,clock):
     opt = menu.update(event)
     if opt == 1:
         modo = JUEGO
-        car, car_color, circuit, crono = menu.load(clock)
+        car, car_color, circuit, crono, l = menu.load(clock)
+        l.running = False
         carlist = []
         carlist.append(car)
 
@@ -143,7 +141,7 @@ def mainMenu(menu, screen,clock):
 
         sock, netPlayers, nick, macli, circuito, netCarName = menu.leer_datos()
 
-        car, car_color, circuit, crono = menu.load(clock)
+        car, car_color, circuit, crono, l = menu.load(clock)
         message = Message()
 
 
@@ -213,7 +211,8 @@ def mainMenu(menu, screen,clock):
         recibir(sock, 1) #espera READY
         
         RecibirServer(sock, car).start()
-        
+        l.running = False
+
         crono.uptime()
 
         return modo, crono, car, circuit, allsprites, mini, [sock,car2]
@@ -307,13 +306,14 @@ def modo2(menu, crono, carlist, circuit, allsprites, screen, mini, sockcar):
             sock.close()
             return QUIT
         elif event.type == KEYDOWN and event.key == K_ESCAPE:
+            pdb.set_trace
             modo = MENU
             try:
                 sock.send("212: he terminado\r\n")
             except:
                 print "ya estoy desconectado"
             sock.close()
-            return QUIT
+            return modo
         #este modo no se si tendra sentido en el juego en red
         elif event.type == KEYDOWN and event.key == K_p:
             modo = PAUSE
