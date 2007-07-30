@@ -159,8 +159,7 @@ class Menu:
         prod = ("PiX Juegos",)
         prog = ("danigm",)
         graf = ("danigm",)
-        music = ("Perro Pelon",)
-        cred = (prod, prog, graf, music)
+        cred = (prod, prog, graf)
         background, background2 = utils.load_image('menu2.png')
         bg = copy.copy(background)
         background = background.convert()
@@ -192,6 +191,8 @@ class Menu:
         pygame.display.flip()
 
         event = pygame.event.wait()
+        while not (event.type == KEYDOWN and event.key == event.key == K_ESCAPE):
+            event = pygame.event.wait()
 
     def menu_opciones(self):
         '''son las opciones disponibles en el menu, se llama a las diferentes funciones'''

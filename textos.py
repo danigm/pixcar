@@ -16,7 +16,7 @@ class es:
         self.quit = 'Salir'
         self.loading = 'Cargando'
 
-        self.credit_cab = ("Un juego de:", "Programadores:", "Disenadores Graficos", "Musicos:")
+        self.credit_cab = ("Un juego de:", "Programadores:", "Disenadores Graficos")
         self.options_h = 'Opciones de PiX Car'
         self.select_car = 'Seleccionar Coche'
         self.language = 'idioma'
@@ -49,7 +49,7 @@ class en:
         self.quit = 'Quit'
         self.loading = 'Loading'
 
-        self.credit_cab = ("A Game produced by:", "Programmers:", "Grafic Designers", "Music:")
+        self.credit_cab = ("A Game produced by:", "Programmers:", "Grafic Designers")
         self.options_h = 'PiX Car Options'
         self.select_car = 'Select Car'
         self.language = 'language'

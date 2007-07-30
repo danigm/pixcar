@@ -1,16 +1,8 @@
 cir:monaco
 new:03:25:25             car             danigm                   
-new:01:04:29             f1              danigm                   
-new:00:52:64             car             dani                     
-new:02:19:04             car             danigm                   
-new:02:00:45             car             danigm                   
-new:01:37:19             sport           dani                     
-new:01:37:99             sport           dani                     
-new:01:56:88             car             dani                     
-new:01:28:85             car             dani                     
-new:01:05:33             car             dani                     
+new:03:04:29             f1              danigm                   
 cir:jerez
-new:01:05:60             sport           dani                     
+new:06:05:60             sport           dani                     
 cir:circulo
-new:00:53:86             car             danigm                   
+new:05:53:86             car             danigm                   
 end
