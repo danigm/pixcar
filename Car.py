@@ -6,37 +6,39 @@ from pygame.locals import *
 import math
 
 
+wiimote = False
+if wiimote:
 ################ Wiimote control import WMD #############
 
-import sys
-sys.path.append('.')
+    import sys
+    sys.path.append('.')
 
-from wmd.Common import *
-from wmd.Config import CFG
-from wmd.UI.UIManager import UIManager
-from wmd.Wiimote.WMManager import WMManager
-from wmd.EVDispatcher import EVDispatcher
-from wmd.MotionSensing import MSManager
-from wmd.Pointer import POManager
-from wmd.CommandMapper import CommandMapper
-import threading
+    from wmd.Common import *
+    from wmd.Config import CFG
+    from wmd.UI.UIManager import UIManager
+    from wmd.Wiimote.WMManager import WMManager
+    from wmd.EVDispatcher import EVDispatcher
+    from wmd.MotionSensing import MSManager
+    from wmd.Pointer import POManager
+    from wmd.CommandMapper import CommandMapper
+    import threading
 
 ###############Thread for wimote event###################
 
-class wm_control (threading.Thread):
-    def __init__(self, callback_acc, callback_button):
-        self.cf = CFG
-        self.ev = EVDispatcher(self.cf)
-        self.wm = WMManager(self.cf, self.ev)
+    class wm_control (threading.Thread):
+        def __init__(self, callback_acc, callback_button):
+            self.cf = CFG
+            self.ev = EVDispatcher(self.cf)
+            self.wm = WMManager(self.cf, self.ev)
 
-        self.ev.subscribe( WM_ACC, callback_acc ) 
-        self.ev.subscribe( WM_BT, callback_button ) 
+            self.ev.subscribe( WM_ACC, callback_acc ) 
+            self.ev.subscribe( WM_BT, callback_button ) 
 
-        threading.Thread.__init__(self)
+            threading.Thread.__init__(self)
 
-    def run(self):
-        if self.wm.connect() and self.wm.setup():
-            self.wm.main_loop()
+        def run(self):
+            if self.wm.connect() and self.wm.setup():
+                self.wm.main_loop()
 
 #########################################################
 
