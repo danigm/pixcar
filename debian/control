@@ -7,7 +7,7 @@ Standards-Version: 3.8.0
 
 Package: pixcar
 Architecture: any
-Depends: python, pygame
+Depends: python, python-pygame
 Description: Juego de coches 2D en vista zenital multijugador
  Juego de coches 2D hecho con pygame facilmente ampliable,
  con un entretenido modo multijugador
