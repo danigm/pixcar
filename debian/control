@@ -3,7 +3,7 @@ Section: games
 Priority: extra
 Maintainer: Daniel Garcia Moreno <dani@danigm.net>
 Build-Depends: debhelper (>= 7)
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 
 Package: pixcar
 Architecture: any
