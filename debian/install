@@ -1,3 +1,5 @@
 *.py /usr/share/pixcar
 data /usr/share/pixcar
+data/car.png /usr/share/pixmaps
+data/pixcar.desktop /usr/share/applications
 pixcar /usr/games

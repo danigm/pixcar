@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=PixCar
+Comment=Car race game
+Comment[es]=Juego de carreras
+Exec=pixcar
+Terminal=false
+X-MultipleArgs=false
+Type=Application
+Icon=pixcar
+Categories=Games;Action;
+StartupNotify=true
