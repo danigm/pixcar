@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /usr/lib/pixcar/
+cd /usr/share/pixcar/
 python pixcar.py
