@@ -1,0 +1,5 @@
+#!/bin/bash
+
+chmod a+w /usr/share/pixcar/data/
+chmod a+w /usr/share/pixcar/data/hof.txt
+
