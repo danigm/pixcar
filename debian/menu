@@ -1,0 +1,2 @@
+?package(pixcar):needs="X11" section="Games/Action"\
+  title="pixcar" command="/usr/bin/pixcar" icon="pixcar"

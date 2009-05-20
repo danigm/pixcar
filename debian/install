@@ -1,0 +1,3 @@
+*.py /usr/lib/pixcar
+data /usr/lib/pixcar
+pixcar /usr/bin

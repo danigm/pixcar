@@ -1,0 +1,12 @@
+Source: pixcar
+Section: games
+Priority: extra
+Maintainer: danigm <dani@danigm.net>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.7.3
+
+Package: pixcar
+Architecture: any
+Depends: python, pygame
+Description: Juego de coches 2D en vista zenital multijugador
+ Juego de coches 2D hecho con pygame facilmente ampliable, con un entretenido modo multijugador
